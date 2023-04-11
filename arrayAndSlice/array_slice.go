@@ -10,7 +10,7 @@ func main(){
 
 
 	//切片定义
-	var slice = make([]int, 0)
+	var slice = make([]int, 3)
 	slice2 := [] int {1,2,3,4,5}
 
 	fmt.Println(a)
@@ -19,10 +19,16 @@ func main(){
 	fmt.Println(slice2)
 	
 	slice_part(slice2)
+	slice_len_cap(slice)
 }
 
 //切片截取
 func slice_part(slice2 []int){
 	slice3 := slice2[1:4]
 	fmt.Println(slice3)
+}
+
+//切片的len与cap方法
+func slice_len_cap(slice []int) {
+	fmt.Println(len(slice), cap(slice), slice)
 }
