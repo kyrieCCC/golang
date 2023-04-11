@@ -10,11 +10,18 @@ func main() {
    var ret int
    var ans int
 
+   //也可以不定义type
+   var boolVal = true
+   var str = "woaiph"
+   var num = 5243
+   
+
    /* 调用函数并返回最大值 */
    ret = max(a, b)
    ans = min(a, b, c)
    fmt.Printf( "最大值是 : %d\n", ret )
    fmt.Printf( "最小值是 : %d\n", ans )
+   fmt.Println(boolVal, str, num)
 }
 
 /* 函数返回两个数的最大值 */
