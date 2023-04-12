@@ -77,5 +77,29 @@ fmt.Println(len(slice), cap(slice))
 //输出0 0,这是应为切片此时只是初始化了，是空的
 ```
 
+### append() 和 copy() 函数
+如果想增加切片的容量，我们必须创建一个新的更大的切片并把原分片的内容全都拷贝过来
+
+append()函数的第一个参数传入需要添加元素的切片，后续填入参数即可
+
+> 需要注意的是，append函数并不与其他编程语言的push方法类似，这是一个赋值操作，我们需要将append函数赋值给原切片才能完成添加的操作
+
+copy()函数需要传入两个参数，第一个参数是粘贴的对象，第二个参数是被拷贝的切片
+
+示例：
+```go
+//新建有值的切片
+slice := []int {1,2,3}
+
+//新建一个空切片
+slice_empty := make([]int)
+
+//向第一个切片添加元素
+slice = append(slice, 1)
+
+//拷贝slice的内容到slice_empty
+copy(slice_empty, slice)
+```
+
 
 
