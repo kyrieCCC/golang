@@ -3,7 +3,7 @@ import "fmt"
 
 func main(){
 	//声明一个map
-	newMap := map[string]string {
+	newMap := map[string]string{
 		"name": "wlc",
 		"age": "18",
 		"company": "meituan",
