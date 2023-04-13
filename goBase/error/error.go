@@ -22,7 +22,7 @@ func main() {
 //定义一个计算平方值的函数，具有错误检测
 func sqrt(a int)(int, error) {
 	if a < 0 {
-		return 0, errors.New("negative number!")
+		return 0, errors.New("negative number")
 	}
 	//没有错误，返回nil
 	return a*a, nil
