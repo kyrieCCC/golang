@@ -30,5 +30,7 @@ func add2(a *int) {
 }
 
 func add_fail(a int) {
+	//实质上是针对值的一个拷贝
+	//此处修改并不会修改元数据
 	a += 2
 }
