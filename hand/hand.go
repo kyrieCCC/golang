@@ -17,4 +17,18 @@ func main(){
 
 	//返回ip指向的地址对应的值
 	fmt.Println("ip指针指向的地址的值是", *ip)
+
+	add_fail(a)
+	fmt.Println(a)
+	add2(&a)
+	fmt.Println(a)
+}
+
+
+func add2(a *int) {
+	*a += 2
+}
+
+func add_fail(a int) {
+	a += 2
 }
