@@ -121,4 +121,26 @@ string.Split(str, connector)
 
 参数：
 1. str，需要进行替换操作的源字符串
-2. connector，需要被替换的字符
+2. connector，用于分割的连接符
+
+### 10.string.ToLower
+该方法会将字符串全部转换为小写的形式，返回一个新的字符串
+
+使用方法：
+```go
+string.ToLower(str)
+//返回全为小写的新的字符串 
+```
+参数：
+1. str，需要进行小写转换操作的源字符串
+
+### 11.string.ToUpper
+该方法会将字符串全部转换为大写的形式，返回一个新的字符串
+
+使用方法：
+```go
+string.ToUpper(str)
+//返回全为大写的新的字符串 
+```
+参数：
+1. str，需要进行大写转换操作的源字符串
