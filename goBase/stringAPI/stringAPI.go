@@ -15,9 +15,13 @@ func main(){
 	fmt.Println(strings.Count(a, "o")) //2
 	//判断指定的前缀
 	fmt.Println(strings.HasPrefix(a, "he"))//true
+	//判断指定的后缀
 	fmt.Println(strings.HasSuffix(a, "ld"))//true
+	//判断字符第一次出现的下标
 	fmt.Println(strings.Index(a, "o"))//4
+	//拼接字符串
 	fmt.Println(strings.Join([]string{"wo", "zai", "meituan"}, "-"))//wo-zai-meituan
+	//重复叠加字符串
 	fmt.Println(strings.Repeat(a, 2))//hello worldhello world
 	
 	b := "phzyzcr"
