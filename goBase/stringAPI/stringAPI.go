@@ -25,8 +25,13 @@ func main(){
 	fmt.Println(strings.Repeat(a, 2))//hello worldhello world
 	
 	b := "phzyzcr"
+
+	//元素替换
 	fmt.Println(strings.Replace(b, "zyzcr", "!", -1))//ph!
+	//元素分割为切片形式
 	fmt.Println(strings.Split(b, ""))//[p h z y z c r]
+	//转换为小写
 	fmt.Println(strings.ToLower(b))//phzyzcr
+	//转换为大写
 	fmt.Println(strings.ToUpper(b))//PHZYZCR
 }
