@@ -17,9 +17,11 @@ func main(){
 
 	slices := []string {"hello", "world"}
 
+	//通过切片合并的方式将一个有指定元素的切片合成为一个字符串
 	outHello((slices))
 }
 
 func outHello(slice []string) {
+	//join合并操作
 	fmt.Println(strings.Join(slice, "-"))
 }
