@@ -22,6 +22,6 @@ func main(){
 }
 
 func outHello(slice []string) {
-	//join合并操作
+	//Join将切片进行合并操作
 	fmt.Println(strings.Join(slice, "-"))
 }
