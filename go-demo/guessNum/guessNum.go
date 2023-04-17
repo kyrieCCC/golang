@@ -14,23 +14,37 @@ func main() {
 
 	randomNum := rand.Intn(maxNum)
 
-	fmt.Println(randomNum)
+	// fmt.Println(randomNum)
 
 	fmt.Println("please input your number:")
 
-	reader := bufio.NewReader(os.Stdin)
-	input, err := reader.ReadString('\n')
-	if err != nil {
-		fmt.Println("error1", err)
-		return
+	for {
+		reader := bufio.NewReader(os.Stdin)
+		input, err := reader.ReadString('\n')
+		if err != nil {
+			fmt.Println("error1", err)
+			// return
+			continue
+		}
+
+		input = strings.TrimSuffix(input, "\r\n")
+
+		guess, err := strconv.Atoi(input)
+		if err != nil {
+			fmt.Println("error2", err)
+			// return
+			continue
+		}
+		// fmt.Println("your guess number is:", guess)
+
+		if guess < randomNum {
+			fmt.Println("a little small")
+		} else if guess > randomNum {
+			fmt.Println("a little big")
+		} else {
+			fmt.Println("right, this num is :", randomNum)
+			break
+		}
 	}
 
-	input = strings.TrimSuffix(input, "\r\n")
-
-	guess, err := strconv.Atoi(input)
-	if err != nil {
-		fmt.Println("error2", err)
-		return
-	}
-	fmt.Println("your guess number is:", guess)
 }
