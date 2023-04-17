@@ -16,8 +16,10 @@ func main()  {
 	target1 := 9
 
 	resSlice := toSum(nums1, target1)
+	resSlice2 := toSum2(nums1, target1)
 
 	fmt.Println(resSlice)
+	fmt.Println(resSlice2)
 }
 
 //两数之和解法一，暴力解法
@@ -30,6 +32,19 @@ func toSum(nums []int, target int) []int {
 				return []int{i, j}
 			}
 		}
+	}
+	return nil
+}
+
+//两数之和解法二，哈希表
+func toSum2(nums []int, target int) []int {
+	newMap := map[int]int{}
+
+	for i, val := range nums {
+		if j, ok := newMap[target - val]; ok {
+			return []int{j, i}
+		}
+		newMap[val] = i
 	}
 	return nil
 }
