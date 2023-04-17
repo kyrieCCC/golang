@@ -20,7 +20,10 @@ func main()  {
 	fmt.Println(resSlice)
 }
 
+//两数之和解法一，暴力解法
 func toSum(nums []int, target int) []int {
+	//直接通过双循环来进行遍历
+	//找出确定先行值与其次值来确定两数的和
 	for i, val := range nums {
 		for j := i + 1; j < len(nums); j++ {
 			if val + nums[j] == target {
