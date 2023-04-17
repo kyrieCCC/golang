@@ -61,3 +61,36 @@ type Person struct {
 
 //在上方将Age字段声明为age，这样在格式化之后出现的字段名即为小写的age
 ```
+
+## json反序列化
+与序列化相反，反序列化就是将我们的序列化转换为go使用的数据类型
+
+在go语言中反序列化可以通过 **Unmarshal**方法
+```go
+func Unmarshal(data []byte, v interface{}) error
+ 
+//传入的值是一个切片类型
+//后面的v interface是指定我们用于接收json数据的结构体
+//是否接收成功返回一个error的值
+```
+
+使用示例：
+```go
+
+func unmarshalStruct(){
+	//我们将这个json写入到变量，不过因为他本身有双引号，这里通过反斜杠将双斜杠转义
+	//在实际开发中，这个str的字符串是通过前端POST上传或者读取文件得到的
+	str := "{\"Name\":\"牛魔王\",\"Age\":500,\"Birthady\":\"2011-11-11\",\"Sal\":8000,\"Skill\":\"牛魔拳\"}"
+ 
+ 
+	var monster Monster       //定义一个结构体，去接收反序列化json的结果
+ 
+	err := json.Unmarshal([]byte(str),&monster)  //反序列化，通过[]byte(str)类型断言将str转换为切片
+	if err != nil{
+		fmt.Printf("unmarshal err=%v\n",err)
+	}
+ 
+	fmt.Printf("反序列化后 monster=%v",monster)
+}
+```
+具体操作见相应的json.go文件
