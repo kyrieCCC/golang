@@ -38,12 +38,16 @@ func toSum(nums []int, target int) []int {
 
 //两数之和解法二，哈希表
 func toSum2(nums []int, target int) []int {
+	//定义一个哈希表
 	newMap := map[int]int{}
 
+	//循环遍历每一个值
 	for i, val := range nums {
+		//判断另一个目标值是否存在哈希表中，如果存在于哈希表中则表示存在
 		if j, ok := newMap[target - val]; ok {
 			return []int{j, i}
 		}
+		//不存在哈希表中，则set值
 		newMap[val] = i
 	}
 	return nil
