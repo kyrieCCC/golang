@@ -47,7 +47,14 @@ func minDepth(root *TreeNode) int {
 	}
 	return res + 1
 }
+//传入一个树的节点值
+//如果该值无左子树和右子树，则返回1
+//当左子树或者右子树有值，则进行递归判断，求出每一个子树的深度，并返回较小的深度
+//最后结果加一表示包括根节点
 
+
+
+//比较函数，将两个值的较小值进行返回 
 func min(x, y int) int {
 	if x > y {
 		return y
