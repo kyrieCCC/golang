@@ -60,4 +60,16 @@ ReadByte 读取并返回**一个字节**。 如果没有字节可用，则返回
 
 每次读取一个字节后就会返回
 
+### conn.Write(b []byte) (n int, err error)
+Write 实现 Conn Write 方法。顾名思义，就是传入参数，这个参数必须为byte类型的参数，write方法会将我们的byte参数写入conn当中，如果失败则会返回err错误信息
+
+使用方法：
+```go 
+//首先读取数据
+data, err := reader.ReadByte()
+
+//写入数据,这里我们省略了返回的n
+_, err := conn.Write([]byte{data})
+```
+
 
