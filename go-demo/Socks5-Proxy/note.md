@@ -1,5 +1,5 @@
 ## 记录一个echo服务器的细节部分
-### net.Listen(network, address string) Listener, error
+### 1. net.Listen(network, address string) Listener, error
 该方法表示**在本地网络地址上收听通告**，注意这里是本地网络地址上，该方法返回两个参数，第一个参数表示server，我们可以针对server进行一系列操作，第二个参数为错误信息
 
 该方法有两个参数：
@@ -7,12 +7,12 @@
 
 2. address，第二个参数表示ip地址，对于 TCP 网络，如果 address 参数中的主机为空或文字未指定的 IP 地址，Listen 将侦听本地系统的所有可用单播和任播 IP 地址。如果地址参数中的端口为空或“0”，如“127.0.0.1:”或“[::1]:0”，则会自动选择一个端口号。 Listener 的 Addr 方法可用于发现所选端口。
 
-### server.Accept() (Conn, err)
+### 2. server.Accept() (Conn, err)
 Accept实现了Listener接口中的Accept方法； 它等待下一次调用并返回一个通用的 Conn。
 
 该方法可以不传入参数，每次进行执行成功后都会返回一个**连接（Conn）**，我们可以在后面定义方法来处理这个连接，错误后会返回错误信息
 
-### go 创建一个goroutine
+### 3. go 创建一个goroutine
 首先了解goroutine是什么，这是一个类似于子线程的一个东西，但是与子线程并不相同。它们被称为 goroutines 是因为现有的术语——线程、协程、进程等——传达了不准确的含义。 goroutine 有一个简单的模型：它是一个**与同一地址空间中的其他 goroutines 并发执行的函数**。 它是**轻量级的**，只比堆栈空间的分配花费更多。 堆栈开始时很小，所以它们很便宜，并且通过根据需要分配（和释放）堆存储来增长。
 
 Goroutines 被**多路复用**到多个 OS 线程上，因此如果一个线程应该阻塞，例如在等待 I/O 时，其他线程会继续运行。 他们的设计隐藏了线程创建和管理的许多复杂性。
@@ -29,7 +29,7 @@ go func() {
 }
 ```
 
-### defer 延迟函数
+### 4. defer 延迟函数
 Go 的 defer 语句安排一个函数调用（延迟函数）在执行 defer 的函数返回之前立即运行。 这是一种不寻常但有效的处理情况的方法，例如无论函数采用哪条路径返回都必须释放的资源。 典型的例子是解锁互斥量或关闭文件。
 
 大概意思就类似于最后执行的函数，我们一般加上defer来用于关闭某个连接，以保证资源的正常释放
@@ -48,19 +48,19 @@ for i := 0; i < 5; i++ {
 //这是因为我们的defer函数为一个LIFO（后进先出）的执行顺序
 ```
 
-### bufio.NewReader(conn) 
+### 5. bufio.NewReader(conn) 
 NewReader 返回一个新的 Reader，其缓冲区具有默认大小。**即创建一个带缓冲的只读流**
 
 带缓冲的流的作用是，可以**减少底层系统调用的次数**，比如我们为了方便一个字节一个字节的读取，但是底层可能合并成几次大的读取操作，并且带缓冲的流会有更多的工具函数用来读取数据
 
-### reader.ReadByte() (byte, err)
+### 6. reader.ReadByte() (byte, err)
 ReadByte 读取并返回**一个字节**。 如果没有字节可用，则返回错误。
 
 > 这里需要注意的是，只读取一个字节，并不是全部或者部分读取
 
 每次读取一个字节后就会返回
 
-### conn.Write(b []byte) (n int, err error)
+### 7. conn.Write(b []byte) (n int, err error)
 Write 实现 Conn Write 方法。顾名思义，就是传入参数，这个参数必须为byte类型的参数，write方法会将我们的byte参数写入conn当中，如果失败则会返回err错误信息
 
 使用方法：
