@@ -13,3 +13,12 @@ Goroutines 被**多路复用**到多个 OS 线程上，因此如果一个线程�
 go func() {
     //do something
 }
+```
+
+## 协程间的通信 CSP
+CSP （Communicating Sequential Processes）
+
+在我们的go语言协程的通信当中，我们更提倡**通过通信共享内存**，而不是通过共享内存实现通信
+
+通过通道来共享内存，就需要引入一个**通道(Channel)**的概念
+
