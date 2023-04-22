@@ -49,4 +49,22 @@ Go Module是go语言官方正式官宣的项目依赖管理方案，利用Go的M
 
 Go Module真正的完成了我们的终极目标，定义版本规则和管理项目依赖关系
 
+从下图可以分析到，mod文件主要有以下三大部分组成 ：
+1. 依赖管理单元
+2. 原生库
+3. 单元依赖
+
 ![dep1](imgs/go-dep1.png)
+
+### go module的核心概念
+Go Module以 **semantic version(语义版本化)** 和**Minimal Version Selection——MVS(最小版本选择)**为核心，相比dep更具稳定性；同时也解决了vendor代码库依赖过于庞大，造成存储浪费的问题
+
+
+**semantic version 语义版本化**
++ 主版本号（MAJOR version）：当我们做了不兼容版本的API修改
++ 次版本号（MINOR version）：当我们做了向下兼容的功能性修改
++ 修订号（PATCH version）：当我们做了向下兼容的问题修改
+
+这里，只要模块的主版本号(MAJOR)不变，次版本号(MINOR)以及修订号(PATCH)的变更都不会引起破坏性的变更(breaking change)
+
+**MVS 最小版本选择**
