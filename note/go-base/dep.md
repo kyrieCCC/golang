@@ -49,4 +49,4 @@ Go Module是go语言官方正式官宣的项目依赖管理方案，利用Go的M
 
 Go Module真正的完成了我们的终极目标，定义版本规则和管理项目依赖关系
 
-![dep1](./imgs/dep1.png)
+![dep1](imgs/go-dep1.png)
