@@ -102,3 +102,14 @@ proxy在之前关于前端的学习中并不陌生，代表代理服务器的意
 
 需要使用只需要配置GOPROXY的配置文件即可
 
+### go get
+go get 是go module的一个工具，用来下载依赖
+
+go get example.org/pkg 
+
+有以下几个参数：
+1. @update 默认
+2. @none 删除依赖
+3. @v1.4.3 tag版本，语义版本
+4. @23dfdd5 特定的commit
+5. @master 分支的最新commit
