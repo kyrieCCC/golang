@@ -113,3 +113,12 @@ go get example.org/pkg
 3. @v1.4.3 tag版本，语义版本
 4. @23dfdd5 特定的commit
 5. @master 分支的最新commit
+
+### go mod
+同样也是go module的工具之一
+
+有以下几个参数
+
+1. init 初始化，创建go.mod文件
+2. download 下载模块到本地缓存
+3. tidy 增加需要的依赖，删除不需要的依赖
