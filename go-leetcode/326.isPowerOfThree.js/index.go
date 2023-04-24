@@ -24,10 +24,11 @@ func isPowerOfThree1(n int) bool {
 	return false
 }
 
-
+//解法二 试除法
 func isPowerOfThree2(n int) bool {
 	for n > 0 && n % 3 == 0 {
 		n /= 3
 	}
 	return n == 1
 }
+
