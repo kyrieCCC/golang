@@ -23,3 +23,8 @@ func removeElements(head *ListNode, val int) *ListNode {
 	}
 	return newNode.Next
 }	
+//循环解法
+//首先遍历每一个元素得值，并找出指定的元素
+//找到指定的元素后进行一个跳过操作
+//即将next = next.next
+//最后返回一个链表
