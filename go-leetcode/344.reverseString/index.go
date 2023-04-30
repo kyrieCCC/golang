@@ -13,6 +13,9 @@ func reverseString(s []string)  {
 		right--
 	}
 }
+//双指针解法，创建两个指针分别指向前端与后端
+//然后两两交换位置
+//终止条件为两个指针的位置重合，代表交换结束
 
 func main() {
 	s := []string{"h","e","l","l","o"}
