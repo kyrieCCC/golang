@@ -33,6 +33,9 @@ func containsDuplicate(nums []int) bool {
 	}
 	return false
 }
+//直接使用哈希表记录每一个值出现的次数
+//当有值出现重复复的情况的时候返回true
+//反之当遍历过程中没有相同元素，返回false
 
 // 解法二 排序
 func containsDuplicate_sort(nums []int) bool {
@@ -45,3 +48,6 @@ func containsDuplicate_sort(nums []int) bool {
 	} 
 	return false
 }
+//首先对这个数组进行排序
+//再根据排序后的内容进行两两比较
+//判断相邻的两个字符是否相等
