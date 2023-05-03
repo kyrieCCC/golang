@@ -21,3 +21,6 @@ func getRow(rowIndex int) []int {
 	}
 	return res[rowIndex]
 }
+//直接使用递推的方式
+//计算出每一个位置应该的值
+//最后返回指定的rowIndex那一行的值即可
