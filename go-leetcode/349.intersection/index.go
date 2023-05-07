@@ -46,3 +46,7 @@ func intersection(nums1 []int, nums2 []int) []int {
 
 	return res2
 }
+//直接使用map来查看两个数组的重合的部分
+//再用一个map来给结果数组去重
+//得出唯一的值
+//最后以数组的形式输出
